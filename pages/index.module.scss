@@ -29,6 +29,7 @@
 
 .main {
   display: flex;
+  justify-content: center;
   padding-top: 1rem;
 
   article {
@@ -44,6 +45,22 @@
 .spotifyPlaylistContainer {
   align-items: center;
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
   justify-content: center;
+
+  > div {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 0.25rem;
+
+    span {
+      font-weight: bold;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+    }
+  }
 }

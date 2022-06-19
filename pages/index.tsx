@@ -1,15 +1,43 @@
 import Head from "next/head";
+import React, { useState } from "react";
 import SpotifyPlaylist from "../components/spotify-playlist/spotify-playlist";
 import styles from "./index.module.scss";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const Home = () => {
+  const [selectedPlaylist, setSelectedPlaylist] = useState("");
+
+  const onClickAnchor = (event: React.MouseEvent) => {
+    event.preventDefault();
+    const { href } = event.currentTarget as HTMLAnchorElement;
+    setSelectedPlaylist(href);
+  };
+
+  const onClickClose = () => {
+    setSelectedPlaylist("");
+  };
+
+  const renderPlaylist = () => {
+    if (!selectedPlaylist) return;
+
+    return (
+      <div className={styles.spotifyPlaylistContainer}>
+        <div onClick={onClickClose}>
+          <IoMdCloseCircle />
+          <span>close</span>
+        </div>
+        <SpotifyPlaylist src={selectedPlaylist} />
+      </div>
+    );
+  };
+
   return (
     <div className={styles.container}>
       <Head>
         <title>carlcidromero</title>
         <meta
           name="description"
-          content="Personal website for Carl 'Cid' Romero"
+          content="Personal website by Carl 'Cid' Romero"
         />
       </Head>
       <header className={styles.header}>carlcidromero</header>
@@ -35,7 +63,10 @@ const Home = () => {
               UFC 2
             </a>
             &apos;s and{" "}
-            <a href="https://open.spotify.com/album/4mrlWRASoO5Ue8IXLHAApC?si=gOii_dFjTqmR2dsMVXqodg">
+            <a
+              href="https://open.spotify.com/embed/playlist/6Y87WJ4WzDSmKmxxefi8XS?utm_source=generator&theme=0"
+              onClick={(event: React.MouseEvent) => onClickAnchor(event)}
+            >
               Cyberpunk 2077
             </a>
             &apos;s original soundtracks, as well as on Sleep Steady&apos;s
@@ -61,9 +92,7 @@ const Home = () => {
             night... all day).
           </p>
         </article>
-        <div className={styles.spotifyPlaylistContainer}>
-          <SpotifyPlaylist src="https://open.spotify.com/embed/playlist/6Y87WJ4WzDSmKmxxefi8XS?utm_source=generator&theme=0" />
-        </div>
+        {renderPlaylist()}
       </main>
     </div>
   );
