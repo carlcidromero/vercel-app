@@ -1,4 +1,4 @@
-import styles from "./spotify-playlist.module.scss";
+import styles from "./spotify-player.module.scss";
 
 interface SpotifyPlaylistProps {
   height?: string;
@@ -6,7 +6,7 @@ interface SpotifyPlaylistProps {
   width?: string;
 }
 
-const SpotifyPlaylist: React.FC<SpotifyPlaylistProps> = (props) => {
+const SpotifyPlayer: React.FC<SpotifyPlaylistProps> = (props) => {
   return (
     <div className={styles.container}>
       <iframe
@@ -16,11 +16,11 @@ const SpotifyPlaylist: React.FC<SpotifyPlaylistProps> = (props) => {
         frameBorder="0"
         allowFullScreen
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      ></iframe>
+      />
     </div>
   );
 };
 
-SpotifyPlaylist.defaultProps = { height: "380", width: "100%" };
+SpotifyPlayer.defaultProps = { height: "380", width: "100%" };
 
-export default SpotifyPlaylist;
+export default SpotifyPlayer;

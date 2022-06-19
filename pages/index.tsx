@@ -1,16 +1,17 @@
 import Head from "next/head";
 import React, { useState } from "react";
-import SpotifyPlaylist from "../components/spotify-playlist/spotify-playlist";
-import styles from "./index.module.scss";
 import { IoMdCloseCircle } from "react-icons/io";
+import Anchor from "../components/anchor/anchor";
+import SpotifyPlayer from "../components/spotify-playlist/spotify-player";
+import { SPOTIFY_LINKS } from "../constants/spotify-links";
+import styles from "./index.module.scss";
 
 const Home = () => {
   const [selectedPlaylist, setSelectedPlaylist] = useState("");
 
-  const onClickAnchor = (event: React.MouseEvent) => {
+  const onClickAnchor = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    const { href } = event.currentTarget as HTMLAnchorElement;
-    setSelectedPlaylist(href);
+    setSelectedPlaylist(event.currentTarget.href);
   };
 
   const onClickClose = () => {
@@ -26,7 +27,7 @@ const Home = () => {
           <IoMdCloseCircle />
           <span>close</span>
         </div>
-        <SpotifyPlaylist src={selectedPlaylist} />
+        <SpotifyPlayer src={selectedPlaylist} />
       </div>
     );
   };
@@ -59,21 +60,21 @@ const Home = () => {
           </p>
           <p>
             My music career thrived-- you can hear my commercial efforts on{" "}
-            <a href="https://open.spotify.com/album/4mJhtGGooABxKeC5n7hzoy?si=QZrxeagaR1efvvpMk3Fcaw">
+            <Anchor href={SPOTIFY_LINKS.UFC_2_OST} onClick={onClickAnchor}>
               UFC 2
-            </a>
+            </Anchor>
             &apos;s and{" "}
-            <a
-              href="https://open.spotify.com/embed/playlist/6Y87WJ4WzDSmKmxxefi8XS?utm_source=generator&theme=0"
-              onClick={(event: React.MouseEvent) => onClickAnchor(event)}
+            <Anchor
+              href={SPOTIFY_LINKS.CYBERPUNK_2077_OST}
+              onClick={onClickAnchor}
             >
               Cyberpunk 2077
-            </a>
+            </Anchor>
             &apos;s original soundtracks, as well as on Sleep Steady&apos;s
             final, trailblazing effort titled{" "}
-            <a href="https://open.spotify.com/album/4Vv3UPKOYNzTRdatWmeikU?si=0zrXyZEBQ7yzHQ2ROSve1A">
+            <Anchor href={SPOTIFY_LINKS.TRUNK_ALBUM} onClick={onClickAnchor}>
               Trunk
-            </a>
+            </Anchor>
             .
           </p>
           <p>
