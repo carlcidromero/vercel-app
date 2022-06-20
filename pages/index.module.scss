@@ -64,3 +64,11 @@
     }
   }
 }
+
+@media (width <= 1130px) {
+  .main {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
