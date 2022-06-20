@@ -1,12 +1,11 @@
+:root {
+  --code-font: "JetBrains Mono", monospace;
+}
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
-}
-
-a,
-a:visited {
-  color: #0058b1;
 }
 
 body,
@@ -17,16 +16,44 @@ html {
   font-size: 1.1rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Dosis", Arial, Helvetica, sans-serif;
-}
-
 #__next {
   display: flex;
   justify-content: center;
+
+  .container {
+    padding: 1rem 2rem;
+    width: min(1100px, 100%);
+  }
+
+  a,
+  a:visited {
+    color: black;
+  }
+
+  code {
+    font-family: var(--code-font);
+
+    &.todo {
+      color: grey;
+      font-size: 0.75rem;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Dosis", Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+
+  main {
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding-top: 1rem;
+  }
 }

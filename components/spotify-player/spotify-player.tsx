@@ -1,7 +1,9 @@
+import { IoMdCloseCircle } from "react-icons/io";
 import styles from "./spotify-player.module.scss";
 
 interface SpotifyPlayer {
   height?: string;
+  onClickClose: () => void;
   src: string;
   width?: string;
 }
@@ -17,6 +19,10 @@ const SpotifyPlayer: React.FC<SpotifyPlayer> = (props) => {
         allowFullScreen
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       />
+      <div onClick={props.onClickClose}>
+        <IoMdCloseCircle />
+        <span>close</span>
+      </div>
     </div>
   );
 };
@@ -24,4 +30,3 @@ const SpotifyPlayer: React.FC<SpotifyPlayer> = (props) => {
 SpotifyPlayer.defaultProps = { height: "380", width: "100%" };
 
 export default SpotifyPlayer;
-

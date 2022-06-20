@@ -1,0 +1,13 @@
+.header {
+  align-items: center;
+  border-bottom: 1px dotted black;
+  display: flex;
+  justify-content: space-between;
+
+  .brand {
+    cursor: pointer;
+    font-family: var(--code-font);
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+}
