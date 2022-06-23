@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../components/header/header";
-import LinkTree from "../content/link-tree/link-tree";
+import LinkTree from "../components/link-tree/link-tree";
 import Portrait from "../content/portrait/portrait";
 
 const Home = () => {

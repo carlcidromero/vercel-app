@@ -20,4 +20,11 @@ const LinkTree: React.FC = () => {
   );
 };
 
+interface LinkTreeProps {
+  data: {
+    children: React.ReactNode | React.ReactNode[];
+    url: string;
+  };
+}
+
 export default LinkTree;
