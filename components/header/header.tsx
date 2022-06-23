@@ -7,9 +7,8 @@ const Header = () => {
       <Link href="/">
         <span className={styles.brand}>carlcidromero</span>
       </Link>
-      <div>
-        <Link href="/">home</Link>
-        <span> | </span>
+      <div className={styles.pages}>
+        <Link href="/about">about</Link>
         <Link href="/vim">vim</Link>
       </div>
     </header>

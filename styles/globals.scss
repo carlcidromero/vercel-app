@@ -25,6 +25,10 @@ html {
     width: min(1100px, 100%);
   }
 
+  .rounded {
+    border-radius: 12px;
+  }
+
   a,
   a:visited {
     color: black;
@@ -52,8 +56,16 @@ html {
   main {
     align-items: center;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     padding-top: 1rem;
+  }
+
+  p {
+    margin: 1rem 0 0 0;
+
+    &:last-child {
+      margin: 1rem 0;
+    }
   }
 }

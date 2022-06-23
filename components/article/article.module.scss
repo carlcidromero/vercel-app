@@ -1,4 +1,7 @@
 .article {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   line-height: 1.75rem;
   width: min(60ch, 100%);
 }
