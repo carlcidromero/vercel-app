@@ -1,30 +1,25 @@
-const LinkTree: React.FC = () => {
+import styles from "./link-tree.module.scss";
+
+export const LinkTree: React.FC<LinkTreeProps> = (props) => {
   return (
-    <>
-      <ul>
-        <li>
-          <a>email</a>
+    <ul className={styles.ul}>
+      {props.data?.map((datum) => (
+        <li key={datum.id}>
+          <a href={datum.url}>{datum.label}</a>
         </li>
-        <li>
-          <a
-            href="https://github.com/carlcidromero"
-            rel="noreferrer"
-            target="_blank"
-          >
-            github
-          </a>
-        </li>
-        <li>linkedin</li>
-      </ul>
-    </>
+      ))}
+    </ul>
   );
 };
 
 interface LinkTreeProps {
-  data: {
-    children: React.ReactNode | React.ReactNode[];
-    url: string;
-  };
+  data: LinkTreeData[];
+}
+
+export interface LinkTreeData {
+  id: number;
+  label: string;
+  url: string;
 }
 
 export default LinkTree;
