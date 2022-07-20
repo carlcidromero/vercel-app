@@ -4,7 +4,6 @@ import Anchor from "../components/anchor/anchor";
 import Article from "../components/article/article";
 import Header from "../components/header/header";
 import SpotifyPlayer from "../components/spotify-player/spotify-player";
-import TopHeading from "../components/top-heading/top-heading";
 import { SPOTIFY_LINKS } from "../constants/spotify-links";
 import styles from "./index.module.scss";
 
@@ -25,7 +24,7 @@ const Home = () => {
 
   const getAboutMe = () => (
     <Article>
-      <TopHeading h1="About Me">((rap) =&gt; code)()</TopHeading>
+      <h1>About Me</h1>
       <p>
         I&apos;m a kid that wanted to rap and play in the NBA-- all grown up.
       </p>
