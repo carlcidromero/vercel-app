@@ -57,11 +57,6 @@ const Home = () => {
         filled with code and in my spare time, I&apos;ll probably tinker around
         with this website and other personal projects.
       </p>
-      <p>
-        The athlete in me still works out regularly but leaves all acrobatic
-        feats to the esports athlete in me (train by day, Rocket League by
-        night... all day).
-      </p>
     </Article>
   );
 
